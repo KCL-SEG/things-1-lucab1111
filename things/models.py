@@ -24,3 +24,6 @@ class Thing:
             MaxLengthValidator(100, message="Please enter a number between 0 and 100"),
         ],
     )
+
+    def __init__(self, name="", description="", quantity=0):
+        pass
