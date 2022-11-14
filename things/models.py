@@ -1,11 +1,10 @@
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 
-class Thing(AbstractUser):
+class Thing(models.Model):
     name = models.CharField(
         blank=False,
         max_length=30,
