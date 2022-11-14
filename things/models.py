@@ -1,10 +1,11 @@
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 
-class Thing:
+class Thing(AbstractUser):
     name = models.CharField(
         blank=False,
         max_length=30,
@@ -24,6 +25,3 @@ class Thing:
             MaxLengthValidator(100, message="Please enter a number between 0 and 100"),
         ],
     )
-
-    def __init__(self, name="", description="", quantity=0):
-        pass
