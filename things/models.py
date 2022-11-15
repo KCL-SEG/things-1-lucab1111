@@ -12,7 +12,7 @@ class Thing(models.Model):
     )
 
     description = models.CharField(
-        blank=False,
+        blank=True,
         max_length=120,
         unique=False,
     )
@@ -20,7 +20,7 @@ class Thing(models.Model):
     quantity = models.IntegerField(
         unique=False,
         validators=[
-            MinLengthValidator(0, message="Please enter a number between 0 and 100"),
-            MaxLengthValidator(100, message="Please enter a number between 0 and 100"),
+            MinLengthValidator(0),
+            MaxLengthValidator(100),
         ],
     )
